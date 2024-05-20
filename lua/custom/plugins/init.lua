@@ -27,4 +27,18 @@ return {
       end)
     end,
   },
+  {
+    'windwp/nvim-ts-autotag',
+    ft = {
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact',
+      'html',
+      'astro',
+      'markdown.mdx',
+      'ejs',
+    },
+    opts = {},
+  },
 }
