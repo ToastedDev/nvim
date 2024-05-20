@@ -154,7 +154,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
---              }
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -259,18 +258,18 @@ require('lazy').setup({
   --    require('gitsigns').setup({ ... })
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  -- { -- Adds git related signs to the gutter, as well as utilities for managing changes
-  --   'lewis6991/gitsigns.nvim',
-  --   opts = {
-  --     signs = {
-  --       add = { text = '+' },
-  --       change = { text = '~' },
-  --       delete = { text = '_' },
-  --       topdelete = { text = '‾' },
-  --       changedelete = { text = '~' },
-  --     },
-  --   },
-  -- },
+  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
+    },
+  },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
