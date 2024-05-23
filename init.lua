@@ -620,6 +620,16 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'eslint-lsp',
+        'prettierd',
+        'tailwindcss-language-server',
+        'typescript-language-server',
+        'css-lsp',
+        'emmet-language-server',
+        'html-lsp',
+        'json-lsp',
+        'astro-language-server',
+        -- "gopls"
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
