@@ -246,10 +246,10 @@ require('lazy').setup({
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
-      vim.keymap.set('n', '<C-_>', function()
+      vim.keymap.set('n', '<C-/>', function()
         require('Comment.api').toggle.linewise.current()
       end, { desc = 'Toggle Comment' })
-      vim.keymap.set('v', '<C-_>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = 'Toggle Comment' })
+      vim.keymap.set('v', '<C-/>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = 'Toggle Comment' })
     end,
   },
 
