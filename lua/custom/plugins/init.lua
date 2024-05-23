@@ -4,4 +4,5 @@
 -- See the kickstart.nvim README for more information
 return {
   { 'supermaven-inc/supermaven-nvim', opts = {} },
+  { 'andweeb/presence.nvim', lazy = false },
 }
