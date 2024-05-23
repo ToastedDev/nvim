@@ -246,10 +246,11 @@ require('lazy').setup({
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
-      vim.keymap.set('n', '<C-/>', function()
+      vim.keymap.set('n', '<C-_>', function()
         require('Comment.api').toggle.linewise.current()
       end, { desc = 'Toggle Comment' })
-      vim.keymap.set('v', '<C-/>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = 'Toggle Comment' })
+      vim.keymap.set('v', '<C-_>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+        { desc = 'Toggle Comment' })
     end,
   },
 
@@ -286,7 +287,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -338,7 +339,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -431,11 +432,11 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
+      { 'folke/neodev.nvim',       opts = {} },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -653,45 +654,45 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- Autoformat
-  --   'stevearc/conform.nvim',
-  --   lazy = false,
-  --   keys = {
-  --     {
-  --       '<leader>fm',
-  --       function()
-  --         require('conform').format { async = true, lsp_fallback = true }
-  --       end,
-  --       mode = '',
-  --       desc = '[F]or[m]at buffer',
-  --     },
-  --   },
-  --   opts = {
-  --     notify_on_error = false,
-  --     format_on_save = function(bufnr)
-  --       -- Disable "format_on_save lsp_fallback" for languages that don't
-  --       -- have a well standardized coding style. You can add additional
-  --       -- languages here or re-enable it for the disabled ones.
-  --       local disable_filetypes = { c = true, cpp = true }
-  --       return {
-  --         timeout_ms = 500,
-  --         lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-  --       }
-  --     end,
-  --     formatters_by_ft = {
-  --       lua = { 'stylua' },
-  --       -- Conform can also run multiple formatters sequentially
-  --       -- python = { "isort", "black" },
-  --       --
-  --       -- You can use a sub-list to tell conform to run *until* a formatter
-  --       -- is found.
-  --       javascript = { { 'prettierd', 'prettier' } },
-  --       javascriptreact = { { 'prettierd', 'prettier' } },
-  --       typescript = { { 'prettierd', 'prettier' } },
-  --       typescriptreact = { { 'prettierd', 'prettier' } },
-  --     },
-  --   },
-  -- },
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    lazy = false,
+    keys = {
+      {
+        '<leader>fm',
+        function()
+          require('conform').format { async = true, lsp_fallback = true }
+        end,
+        mode = '',
+        desc = '[F]or[m]at buffer',
+      },
+    },
+    opts = {
+      notify_on_error = false,
+      format_on_save = function(bufnr)
+        -- Disable "format_on_save lsp_fallback" for languages that don't
+        -- have a well standardized coding style. You can add additional
+        -- languages here or re-enable it for the disabled ones.
+        local disable_filetypes = { c = true, cpp = true }
+        return {
+          timeout_ms = 500,
+          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+        }
+      end,
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        -- Conform can also run multiple formatters sequentially
+        -- python = { "isort", "black" },
+        --
+        -- You can use a sub-list to tell conform to run *until* a formatter
+        -- is found.
+        javascript = { { 'prettierd', 'prettier' } },
+        javascriptreact = { { 'prettierd', 'prettier' } },
+        typescript = { { 'prettierd', 'prettier' } },
+        typescriptreact = { { 'prettierd', 'prettier' } },
+      },
+    },
+  },
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
