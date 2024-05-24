@@ -610,6 +610,19 @@ require('lazy').setup({
             },
           },
         },
+
+        jsonls = {
+          settings = {
+            json = {
+              schemas = {
+                {
+                  fileMatch = { 'package.json' },
+                  url = 'http://json.schemastore.org/package.json',
+                },
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
