@@ -704,12 +704,12 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { 'prettierd', 'prettier' } },
-        javascriptreact = { { 'prettierd', 'prettier' } },
-        typescript = { { 'prettierd', 'prettier' } },
-        typescriptreact = { { 'prettierd', 'prettier' } },
-        json = { { 'prettierd', 'prettier' } },
-        html = { { 'prettierd', 'prettier' } },
+        javascript = { { 'prettier', 'prettierd' } },
+        javascriptreact = { { 'prettier', 'prettierd' } },
+        typescript = { { 'prettier', 'prettierd' } },
+        typescriptreact = { { 'prettier', 'prettierd' } },
+        json = { { 'prettier', 'prettierd' } },
+        html = { { 'prettier', 'prettierd' } },
       },
     },
   },
