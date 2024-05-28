@@ -6,4 +6,10 @@ return {
   { 'supermaven-inc/supermaven-nvim', opts = {} },
   { 'andweeb/presence.nvim', lazy = false },
   { 'wakatime/vim-wakatime', lazy = false },
+  {
+    'tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set('n', '<leader>g', vim.cmd.Git, { desc = 'Open [G]it' })
+    end,
+  },
 }
