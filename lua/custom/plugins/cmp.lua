@@ -34,6 +34,10 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+
+      -- Adds support for emmet.
+      'mattn/emmet-vim',
+      'dcampos/cmp-emmet-vim',
     },
     config = function()
       -- See `:help cmp`
@@ -58,7 +62,6 @@ return {
           -- ['<C-n>'] = cmp.mapping.select_next_item(),
           -- Select the [p]revious item
           -- ['<C-p>'] = cmp.mapping.select_prev_item(),
-
           -- Scroll the documentation window [b]ack / [f]orward
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -105,7 +108,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-          -- { name = 'supermaven' },
+          { name = 'emmet_vim' },
         },
       }
     end,

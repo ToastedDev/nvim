@@ -216,7 +216,6 @@ return {
         'tailwindcss-language-server',
         'typescript-language-server',
         'css-lsp',
-        'emmet-language-server',
         'html-lsp',
         'json-lsp',
         'astro-language-server',
