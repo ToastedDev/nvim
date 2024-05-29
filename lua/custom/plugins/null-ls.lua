@@ -1,7 +1,8 @@
 return {
   {
     'nvimtools/none-ls.nvim',
-    event = 'VeryLazy',
+    event = 'BufWritePre',
+    keys = { '<leader>fm' },
     opts = function()
       local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
       local null_ls = require 'null-ls'
@@ -15,6 +16,10 @@ return {
       vim.api.nvim_create_user_command('FormattingDisable', function()
         FormattingEnabled = false
       end, {})
+
+      vim.keymap.set('n', '<leader>fm', function()
+        vim.lsp.buf.format { bufnr = vim.api.nvim_get_current_buf() }
+      end, { desc = '[F]or[M]at document' })
 
       local opts = {
         sources = {
