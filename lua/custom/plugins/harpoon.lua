@@ -16,7 +16,7 @@ return {
       end, { desc = '[A]dd File to [H]arpoon' })
 
       vim.keymap.set('n', '<leader>rh', function()
-        mark.add_file()
+        mark.remove_file()
       end, { desc = '[R]emove File from [H]arpoon' })
 
       for i = 1, 5 do
