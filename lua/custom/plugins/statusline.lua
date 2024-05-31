@@ -27,7 +27,7 @@ return {
           theme = 'vscode',
           globalstatus = true,
           component_separators = { left = '', right = '' },
-          section_separators = { left = '█', right = '█' },
+          section_separators = { left = '', right = '' },
         },
         sections = {
           lualine_b = {
@@ -42,6 +42,7 @@ return {
           lualine_x = {
             'filetype',
           },
+          lualine_y = {},
         },
       }
     end,
