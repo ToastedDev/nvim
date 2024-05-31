@@ -31,12 +31,21 @@ return {
       'hrsh7th/cmp-path',
       'mattn/emmet-vim',
       'dcampos/cmp-emmet-vim',
+      'windwp/nvim-autopairs',
+      'windwp/nvim-ts-autotag',
     },
     config = function()
-      -- See `:help cmp`
-      local cmp = require 'cmp'
+      require('nvim-autopairs').setup {}
+      ---@diagnostic disable-next-line: missing-fields
+      require('nvim-ts-autotag').setup {}
+
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+
+      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
+      local cmp = require 'cmp'
+
+      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
       cmp.setup {
         snippet = {
