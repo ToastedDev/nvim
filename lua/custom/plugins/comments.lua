@@ -1,7 +1,7 @@
 return {
   {
     'numToStr/Comment.nvim',
-    keys = { '<C-_>', "<C-/>", 'gc', 'gcc' },
+    keys = { '<C-_>', '<C-/>', 'gc', 'gcc' },
     config = function()
       require('Comment').setup()
 
@@ -21,7 +21,14 @@ return {
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
+    keys = { "<leader>sc" },
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false },
+    config = function()
+      require('todo-comments').setup {
+        signs = false,
+      }
+
+      vim.keymap.set('n', '<leader>sc', "<cmd>TodoTelescope<CR>", { desc = '[S]earch Todo [C]omments' })
+    end,
   },
 }
