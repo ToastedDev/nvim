@@ -39,8 +39,36 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-ts-autotag').setup {}
 
+      -- Setup LuaSnip
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+      -- Add custom snippets
+      local s = luasnip.snippet
+      local i = luasnip.insert_node
+      local t = luasnip.text_node
+      -- Better ! snippet for HTML
+      luasnip.add_snippets('html', {
+        s('!', {
+          t { '<!DOCTYPE html>' },
+          t { '', '<html lang="en">' },
+          t { '', '  <head>' },
+          t { '', '    <meta charset="UTF-8">' },
+          t { '', '    <meta name="viewport" content="width=' },
+          i(1, 'device-width'),
+          t ', initial-scale=',
+          i(2, '1.0'),
+          t '">',
+          t { '', '    <title>' },
+          i(3, 'Document'),
+          t '</title>',
+          t { '', '  </head>' },
+          t { '', '  <body>' },
+          t { '', '    ' },
+          i(4),
+          t { '', '  </body>' },
+          t { '', '</html>' },
+        }),
+      })
 
       local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
       local cmp = require 'cmp'
