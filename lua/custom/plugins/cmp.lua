@@ -33,6 +33,7 @@ return {
       'dcampos/cmp-emmet-vim',
       'windwp/nvim-autopairs',
       'windwp/nvim-ts-autotag',
+      { 'supermaven-inc/supermaven-nvim', opts = {} },
     },
     config = function()
       require('nvim-autopairs').setup {}
