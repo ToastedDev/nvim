@@ -33,7 +33,16 @@ return {
       'dcampos/cmp-emmet-vim',
       'windwp/nvim-autopairs',
       'windwp/nvim-ts-autotag',
-      { 'supermaven-inc/supermaven-nvim', opts = {} },
+      -- FIXME: This should use the official supermaven-inc/supermaven.nvim plugin,
+      -- but the PR that has these new options hasn't been merged yet.
+      {
+        'AlejandroSuero/supermaven-nvim',
+        branch = 'feature/add-debug-mode',
+        opts = {
+          silence_info = true,
+          debug = true,
+        },
+      },
     },
     config = function()
       require('nvim-autopairs').setup {}
