@@ -2,13 +2,15 @@ return {
   {
     'Mofiqul/vscode.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
+    opts = {
+      transparent = true,
+    },
     init = function()
       -- Load the colorscheme here.
       vim.cmd.colorscheme 'vscode'
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
-      vim.api.nvim_set_hl(0, 'Normal', { bg = "none" })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = "none" })
+      vim.opt.fillchars = { eob = ' ' }
     end,
   },
 }
