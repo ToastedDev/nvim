@@ -28,7 +28,7 @@ return {
           end, opts)
 
           vim.keymap.set('n', 'p', function()
-            vim.cmd.Git { 'pull', '--rebase' }
+            vim.cmd.Git 'pull'
           end, opts)
 
           vim.keymap.set('n', 'U', ':Git push -u origin ', opts)
