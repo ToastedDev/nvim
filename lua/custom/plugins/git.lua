@@ -31,7 +31,10 @@ return {
             vim.cmd.Git 'pull'
           end, opts)
 
-          vim.keymap.set('n', 'U', ':Git push -u origin ', opts)
+          vim.keymap.set('n', 'U', function()
+            local current_branch = vim.cmd.Git "rev-parse --abbrev-ref HEAD"
+            return vim.cmd.Git "push --set-upstream origin " .. current_branch
+          end, opts)
         end,
       })
     end,
