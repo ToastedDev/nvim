@@ -6,3 +6,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.cmd [[
+  autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+]]
