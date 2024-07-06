@@ -180,6 +180,7 @@ return {
         'css-lsp',
         'html-lsp',
         'json-lsp',
+        'emmet_language_server',
         'astro-language-server',
         -- "gopls"
       })
