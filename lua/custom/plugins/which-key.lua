@@ -6,7 +6,7 @@ return {
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
+      require('which-key').setup {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
@@ -16,9 +16,9 @@ return {
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
       }
       -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
+      require('which-key').setup {
+        ['<leader>h'] = { name = 'Git [H]unk', mode = 'v' },
+      }
     end,
   },
 }
