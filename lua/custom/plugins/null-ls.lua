@@ -23,7 +23,7 @@ return {
 
       local opts = {
         sources = {
-          null_ls.builtins.formatting.prettierd.with {
+          null_ls.builtins.formatting.prettier.with {
             extra_filetypes = { 'astro', 'mdx', 'ejs' },
           },
           null_ls.builtins.formatting.stylua,
