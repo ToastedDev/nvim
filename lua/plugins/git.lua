@@ -1,10 +1,10 @@
 return {
   {
     "tpope/vim-fugitive",
-    keys = { "<leader>g" },
+    keys = {
+      { "<leader>g", vim.cmd.Git, desc = "Open [G]it" },
+    },
     config = function()
-      vim.keymap.set("n", "<leader>g", vim.cmd.Git, { desc = "Open [G]it" })
-
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "fugitive",
         callback = function()
