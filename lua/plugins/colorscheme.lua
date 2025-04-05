@@ -1,18 +1,23 @@
 return {
-  "akinsho/horizon.nvim",
+  "rose-pine/neovim",
+  as = "rose-pine",
   priority = 1000, -- Make sure to load this before all the other start plugins.
-  config = function()
-    vim.api.nvim_create_autocmd('ColorScheme', {
-      pattern = "*",
-      callback = function()
-        vim.api.nvim_set_hl(0, "Normal", { bg = "#0a0d0f" })
-        vim.api.nvim_set_hl(0, "NormalNC", { bg = "#0a0d0f" })
-        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#0a0d0f" })
-        vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#272730" })
-        vim.api.nvim_set_hl(0, "CursorLine", { bg = "#17171d" })
-      end
-    })
-
-    require("horizon").setup()
-  end
+  opts = {
+    styles = {
+      italic = false,
+    },
+    palette = {
+      moon = {
+        _nc = "#16141f",
+        base = "#191724",
+        surface = "#1f1d2e",
+        overlay = "#26233a",
+        muted = "#6e6a86",
+        subtle = "#908caa",
+      },
+    },
+  },
+  config = function(_, opts)
+    require("rose-pine").setup(opts)
+  end,
 }
