@@ -8,10 +8,10 @@ return {
     },
     palette = {
       moon = {
-        _nc = "#16141f",
-        base = "#191724",
-        surface = "#1f1d2e",
-        overlay = "#26233a",
+        _nc = "#000000",
+        base = "#000000",
+        surface = "#000000",
+        overlay = "#1f1d2e",
         muted = "#6e6a86",
         subtle = "#908caa",
       },
