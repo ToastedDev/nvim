@@ -29,6 +29,11 @@ return {
           Terminal:new({
             cmd = "git cz",
             direction = "float",
+            on_close = function()
+              vim.api.nvim_buf_call(bufnr, function()
+                vim.cmd.edit()
+              end)
+            end,
           }):toggle()
         end)
       end,
