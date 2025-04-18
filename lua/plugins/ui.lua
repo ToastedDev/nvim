@@ -21,4 +21,10 @@ return {
       inlay_hints = { enabled = false },
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = {
+      enable = true,
+    },
+  }
 }
