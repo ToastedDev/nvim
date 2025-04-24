@@ -4,7 +4,7 @@ return {
     opts = {
       indent = { enabled = false },
       scroll = { enabled = false },
-      dashboard = { enabled = false },
+      dashboard = { enabled = false }
     },
   },
   {
@@ -19,12 +19,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = false },
-    },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    opts = {
-      enable = true,
     },
   }
 }
