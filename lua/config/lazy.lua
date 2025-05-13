@@ -20,7 +20,7 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      opts = { colorscheme = "rose-pine-moon" },
+      opts = { colorscheme = "tokyonight-night" },
     },
 
     { import = "lazyvim.plugins.extras.linting.eslint" },
