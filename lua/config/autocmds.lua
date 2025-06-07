@@ -8,5 +8,5 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.cmd([[
-  autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+  autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[6 q")
 ]])
