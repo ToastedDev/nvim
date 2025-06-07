@@ -14,3 +14,15 @@ vim.bo.softtabstop = 2
 
 -- Disable relative line numbers
 vim.opt.relativenumber = false
+
+vim.g.clipboard = {
+  name = "xsel",
+  copy = {
+    ["+"] = "xsel --input --clipboard",
+    ["*"] = "xsel --input --primary",
+  },
+  paste = {
+    ["+"] = "xsel --output --clipboard",
+    ["*"] = "xsel --output --primary",
+  },
+}
