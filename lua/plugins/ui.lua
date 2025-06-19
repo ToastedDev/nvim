@@ -4,7 +4,7 @@ return {
     opts = {
       indent = { enabled = false },
       scroll = { enabled = false },
-      dashboard = { enabled = false }
+      dashboard = { enabled = false },
     },
   },
   {
@@ -20,5 +20,5 @@ return {
     opts = {
       inlay_hints = { enabled = false },
     },
-  }
+  },
 }
